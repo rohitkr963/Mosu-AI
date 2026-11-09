@@ -1,0 +1,480 @@
+{
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "name": "1. New profile version needs its own review",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        }
+      ]
+    },
+    {
+      "name": "2. Untrusted note cannot grant approval",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "blocked",
+          "notificationCalls": 0,
+          "deliveries": 0
+        }
+      ]
+    },
+    {
+      "name": "3. Wrong action approval is rejected",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval rejected",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "blocked",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval accepted",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval rejected",
+          "notificationCalls": 0,
+          "deliveries": 0
+        }
+      ]
+    },
+    {
+      "name": "4. Approved send and replay deliver once",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval accepted",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "sent",
+          "attempts": 1,
+          "receiptId": "receipt-1",
+          "outcome": "sent",
+          "notificationCalls": 1,
+          "deliveries": 1
+        },
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "sent",
+          "attempts": 1,
+          "receiptId": "receipt-1",
+          "outcome": "sent",
+          "notificationCalls": 1,
+          "deliveries": 1
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "sent",
+          "attempts": 1,
+          "receiptId": "receipt-1",
+          "outcome": "already sent",
+          "notificationCalls": 1,
+          "deliveries": 1
+        }
+      ]
+    },
+    {
+      "name": "5. Lost response: unknown, then safe retry",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval accepted",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 1,
+          "receiptId": null,
+          "outcome": "request attempted",
+          "notificationCalls": 1,
+          "deliveries": 1
+        },
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 1,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 1,
+          "deliveries": 1
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "sent",
+          "attempts": 2,
+          "receiptId": "receipt-1",
+          "outcome": "sent",
+          "notificationCalls": 2,
+          "deliveries": 1
+        }
+      ]
+    },
+    {
+      "name": "Limit check: two uncertain attempts, then stop",
+      "passed": true,
+      "errors": [],
+      "timeline": [
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": false,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "loaded",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "APPROVE_ACTION",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "not_sent",
+          "attempts": 0,
+          "receiptId": null,
+          "outcome": "approval accepted",
+          "notificationCalls": 0,
+          "deliveries": 0
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 1,
+          "receiptId": null,
+          "outcome": "request attempted",
+          "notificationCalls": 1,
+          "deliveries": 1
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 2,
+          "receiptId": null,
+          "outcome": "needs_reconciliation",
+          "notificationCalls": 2,
+          "deliveries": 1
+        },
+        {
+          "event": "LOAD_PROFILE",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 2,
+          "receiptId": null,
+          "outcome": "needs_reconciliation",
+          "notificationCalls": 2,
+          "deliveries": 1
+        },
+        {
+          "event": "SEND",
+          "version": 4,
+          "protocolRevision": "r1",
+          "issues": [
+            "missing:waist",
+            "unit:hip:in"
+          ],
+          "reviewStatus": "needs_clarification",
+          "actionId": "action-29137615fc4816ccefba3746",
+          "approved": true,
+          "delivery": "unknown",
+          "attempts": 2,
+          "receiptId": null,
+          "outcome": "needs_reconciliation",
+          "notificationCalls": 2,
+          "deliveries": 1
+        }
+      ]
+    }
+  ]
+}

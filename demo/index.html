@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOSU clarification workflow demo</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">MOSU · stage 2 demonstrator</p>
+      <h1>Clarification workflow</h1>
+      <p class="subtitle">Real workflow state and mock-tool results, executed locally.</p>
+    </div>
+    <div class="local-badge"><span></span> Local mock harness</div>
+  </header>
+
+  <main>
+    <section class="panel controls" aria-labelledby="controls-title">
+      <div>
+        <p class="eyebrow">Run controls</p>
+        <h2 id="controls-title">Choose a scenario</h2>
+      </div>
+      <label class="scenario-label" for="scenario">Scenario</label>
+      <select id="scenario"></select>
+      <button id="next" class="button button-primary">Next step</button>
+      <button id="approve" class="button">Approve exact action</button>
+      <button id="retry" class="button button-retry">Retry send</button>
+      <button id="reset" class="button button-quiet">Reset</button>
+      <p id="scenario-description" class="control-note" aria-live="polite"></p>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="flow-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Executed workflow</p>
+          <h2 id="flow-title">Workflow path</h2>
+        </div>
+        <span id="active-stage" class="stage-status">Waiting to load</span>
+      </div>
+      <div class="flow" aria-label="Workflow diagram">
+        <div class="flow-main">
+          <div class="flow-node" data-stage="load">Load / Validate</div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="flow-node" data-stage="clarification">Clarification</div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="flow-node" data-stage="approval">Approval</div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="flow-node" data-stage="send">Send</div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="flow-node" data-stage="result">Result</div>
+        </div>
+        <div class="flow-branch">
+          <span class="branch-line" aria-hidden="true">↘</span>
+          <div class="flow-node flow-unknown" data-stage="unknown">Unknown delivery</div>
+          <span class="retry-loop" aria-hidden="true">⤺ retry with the same action ID</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="two-column">
+      <section class="panel" aria-labelledby="state-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Authoritative workflow output</p>
+            <h2 id="state-title">Current state</h2>
+          </div>
+          <span id="outcome-pill" class="outcome-pill">initial</span>
+        </div>
+        <dl class="state-grid">
+          <dt>Profile</dt><dd id="profile"></dd>
+          <dt>Protocol</dt><dd id="protocol"></dd>
+          <dt>Validation issues</dt><dd id="issues"></dd>
+          <dt>Pending action</dt><dd id="pending-action"></dd>
+          <dt>Approved action ID</dt><dd id="approved-action"></dd>
+          <dt>Delivery status</dt><dd id="delivery-status"></dd>
+          <dt>Attempts</dt><dd id="attempts"></dd>
+          <dt>Receipt ID</dt><dd id="receipt"></dd>
+          <dt>Review status</dt><dd id="review-status"></dd>
+          <dt>Outcome</dt><dd id="outcome"></dd>
+        </dl>
+        <div class="count-grid">
+          <div class="count-card">
+            <span>Notification requests</span>
+            <strong id="requests">0</strong>
+            <small>Actual calls to mock notify</small>
+          </div>
+          <div class="count-card">
+            <span>Actual mock deliveries</span>
+            <strong id="deliveries">0</strong>
+            <small>Harness delivery log</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel trace-panel" aria-labelledby="trace-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Harness evidence</p>
+            <h2 id="trace-title">Event trace</h2>
+          </div>
+          <span id="trace-count" class="trace-count">0 events</span>
+        </div>
+        <ol id="trace" class="trace-list"></ol>
+        <p id="empty-trace" class="empty-note">No workflow events have been executed.</p>
+      </section>
+    </div>
+
+    <section class="conceptual" aria-labelledby="conceptual-title">
+      <p class="eyebrow">Not executed · future workflow</p>
+      <h2 id="conceptual-title">Conceptual (not executed)</h2>
+      <div class="conceptual-stages">
+        <div><strong>Designer review</strong><span>Human reviews the profile and clarification context.</span></div>
+        <span aria-hidden="true">→</span>
+        <div><strong>Production handoff</strong><span>Approved work moves through a separately governed production process.</span></div>
+      </div>
+      <p>This panel is explanatory only; neither stage is part of the harness or event trace.</p>
+    </section>
+    <footer>All executed workflow output above comes from <code>workflow.mjs</code> and the local mock harness.</footer>
+  </main>
+</body>
+</html>
